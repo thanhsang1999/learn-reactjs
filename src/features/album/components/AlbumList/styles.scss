@@ -1,0 +1,7 @@
+.Album_List {
+    list-style-type: none;
+    display: flex;
+    & > li {
+        margin: 0 20px;
+    }
+}

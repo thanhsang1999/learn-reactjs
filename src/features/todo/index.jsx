@@ -1,23 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import TodoList from './components/TodoList';
 
-Todofeatures.propTypes = {
-    todoList: PropTypes.array,
-};
 
 function Todofeatures(props) {
-    const todoList = [
-        { id: 1, title: 'eat' },
-        { id: 2, title: 'code' },
-        { id: 3, title: 'sleep' },
+    const initTodoList = [
+        {
+            id: 1,
+            title: 'eat',
+            status: 'completed',
+        },
+        {
+            id: 2,
+            title: 'code',
+            status: 'new',
+        },
+        {
+            id: 3,
+            title: 'sleep',
+            status: 'new',
+        },
     ];
-
-
+    const [todoList, setTodoList] = useState(initTodoList);
+    const handleClick = (item, idx) => {
+        const newTodoList = [...todoList];
+        newTodoList[idx] = {
+            ...newTodoList[idx],
+            status: newTodoList[idx].status === 'new' ? 'completed' : 'new',
+        }
+        setTodoList(newTodoList);
+    };
     return (
         <div>
             <h3>Todo List</h3>
-            <TodoList todoList={todoList} />
+            <TodoList todoList={todoList} onCLickTodo={handleClick} />
         </div>
     );
 }

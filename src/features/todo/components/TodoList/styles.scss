@@ -1,0 +1,8 @@
+.todo-item {
+    cursor: pointer;
+    list-style-type: decimal;
+    &.completed {
+        opacity: 0.7;
+        text-decoration-line: line-through;
+    }
+}

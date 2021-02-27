@@ -1,0 +1,10 @@
+.Ablum_Item {
+    &_Image {
+        & > img {
+            max-height: 200px;
+        }
+    }
+    &_Title {
+        color: red;
+    }
+}
