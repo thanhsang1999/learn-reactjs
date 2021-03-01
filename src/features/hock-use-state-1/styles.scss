@@ -1,0 +1,11 @@
+.Color-Box {
+    $size-box: 200px;
+
+    width: $size-box;
+    height: $size-box;
+    border-radius: 5%;
+    margin: 20px;
+
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
