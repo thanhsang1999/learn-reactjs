@@ -11,7 +11,7 @@ function AblumItem(props) {
     return (
         <div className="Ablum_Item">
             <div className="Ablum_Item_Image">
-                <img src={ablumItem.link} />
+                <img alt={ablumItem.name} src={ablumItem.link} />
             </div>
             <div className="Ablum_Item_Title">
                 <p>{ablumItem.name}</p>

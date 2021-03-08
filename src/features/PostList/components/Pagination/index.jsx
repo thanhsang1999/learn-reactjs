@@ -13,21 +13,22 @@ Pagination.defaultProps = {
 function Pagination(props) {
     const { pagination, onPageChange } = props;
     const { _page, _limit, _totalRows } = pagination;
+    const totalPage = Math.ceil(_totalRows / _limit);
 
     function handleOnPageChange(newPage) {
         if (onPageChange) {
-            console.log(newPage);
+            // console.log(newPage);
             onPageChange(newPage);
         }
     }
     return (
         <div>
             <button
-                disabled={_page === 0}
+                disabled={_page <= 1}
                 onClick={() => handleOnPageChange(_page - 1)}
             >Previous</button>
             <button
-                disabled={_page === _limit}
+                disabled={_page >= totalPage}
                 onClick={() => handleOnPageChange(_page + 1)}
             >Next</button>
         </div>
